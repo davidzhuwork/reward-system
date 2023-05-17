@@ -1,13 +1,19 @@
-import { render, screen, act, within } from "@testing-library/react";
+import {
+    render,
+    screen,
+    act,
+    within,
+    logRoles,
+} from "@testing-library/react";
 
 import RewardTable from "../RewardTable";
 
 describe("RewardTable Test", () => {
-    beforeEach(() => {
+    beforeAll(() => {
         jest.mock("../__mocks__/axios.js");
     });
 
-    afterEach(() => {
+    afterAll(() => {
         jest.clearAllMocks();
     });
 
@@ -15,8 +21,8 @@ describe("RewardTable Test", () => {
         await act(async () =>
             render(<RewardTable dataUrl="./mockapi" />)
         );
-
         const tableElement = await screen.findByTestId("table");
+        logRoles(tableElement);
         expect(tableElement).toBeInTheDocument();
     });
 
@@ -26,7 +32,7 @@ describe("RewardTable Test", () => {
         );
 
         const tableElement = await screen.findByTestId("table");
-        const rows = await within(tableElement).queryAllByRole("row");
+        const rows = await within(tableElement).findAllByRole("row");
         expect(rows).toHaveLength(4);
     });
 
@@ -34,9 +40,8 @@ describe("RewardTable Test", () => {
         await act(async () =>
             render(<RewardTable dataUrl="./mockapi" />)
         );
-
         const tableElement = await screen.findByTestId("table");
-        const rows = await within(tableElement).queryAllByRole("row");
+        const rows = await within(tableElement).findAllByRole("row");
         expect(rows[0]).toHaveTextContent("February");
         expect(rows[1]).toHaveTextContent("266");
         expect(rows[2]).toHaveTextContent("178");

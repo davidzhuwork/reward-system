@@ -4,11 +4,8 @@ This is a rewards program system designed for retailers to offer a rewards progr
 
 ## Features
 
--   Customers can earn points for each purchase made.
 -   Points are awarded based on the recorded purchase amount.
 -   The system provides a user-friendly interface for retailers and customers.
--   Customers can track their points and redeem rewards.
--   Retailers can manage customer accounts and view transaction history.
 -   The system utilizes a JSON server as the backend to store and retrieve data.
 -   The frontend is built using React, providing a responsive and interactive user experience.
 
@@ -43,7 +40,3 @@ Once the system is up and running, you can access it by opening your browser and
 ## Contributing
 
 Contributions to this project are welcome. If you find any bugs or have suggestions for improvements, please submit an issue or create a pull request on the repository.
-
-## License
-
-This project is licensed under the [MIT License](https://chat.openai.com/LICENSE).
