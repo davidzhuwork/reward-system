@@ -15,7 +15,7 @@ function RewardTable({ dataUrl }) {
         const fetchData = async () => {
             const response = await axios.get(dataUrl);
             const data = response.data;
-            console.log("data is ", data);
+            // console.log("data is ", data);
             const formatData = calcRewardsAndFormatData(data);
             setData(formatData);
         };

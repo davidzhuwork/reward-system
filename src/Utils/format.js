@@ -11,6 +11,7 @@ const calcRewardsAndFormatData = (transactions) => {
      *      }
      * }
      */
+
     const record = {};
     const BASE_REWARDS = 50;
     transactions.forEach((transaction) => {
@@ -41,7 +42,6 @@ const calcRewardsAndFormatData = (transactions) => {
             };
         }
     });
-    console.log(record);
     return record;
 };
 
@@ -81,7 +81,7 @@ const generateOutputData = (data, monthsArr) => {
      */
     let outputData = [];
 
-    Object.keys(data).map((id) => {
+    Object.keys(data).forEach((id) => {
         let curIdData = [id];
         for (let i = 0; i < monthsArr.length; i++) {
             let month = monthsArr[i];
